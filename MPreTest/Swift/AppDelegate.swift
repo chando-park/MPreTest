@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let fetcher = UrlSessionFecher()  // 실제 구현체로 교체 가능
-        let viewModel = ListViewModel(fetcher: fetcher)
+        let viewModel = ListViewModel(saveDataManager: CoreDataManager.shared, fetcher: fetcher)
         let listViewController = ListViewController(viewModel: viewModel)
         
         let navigationController = UINavigationController(rootViewController: listViewController)

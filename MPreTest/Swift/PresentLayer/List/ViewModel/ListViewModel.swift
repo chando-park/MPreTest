@@ -11,13 +11,17 @@ protocol ListViewModelType {
 class ListViewModel: ListViewModelType {
     @Published private(set) var list: [ListPresentData] = []
     @Published private(set) var loading: Bool = false
+    
+    private let saveDataManager: SaveDataManagerType
     private let fetcher: ListDataFecherType
     private var cancellables: Set<AnyCancellable> = []
-
-    init(fetcher: ListDataFecherType) {
+    
+    init(list: [ListPresentData] = [], saveDataManager: SaveDataManagerType, fetcher: ListDataFecherType) {
+        self.list = list
+        self.saveDataManager = saveDataManager
         self.fetcher = fetcher
     }
-
+    
     var listPublisher: AnyPublisher<[ListPresentData], Never> {
         $list.eraseToAnyPublisher()
     }
@@ -25,7 +29,7 @@ class ListViewModel: ListViewModelType {
     var isLoading: AnyPublisher<Bool, Never> {
         $loading.eraseToAnyPublisher()
     }
-
+    
     func getData() {
         loading = true
         fetcher.getList()
@@ -39,13 +43,13 @@ class ListViewModel: ListViewModelType {
                     .eraseToAnyPublisher()
             }
             .catch { _ in
-                CoreDataManager.shared.fetchNewsItems()
+                self.saveDataManager.fetchNewsItems()
                     .replaceError(with: [])
             }
             .map { model in
                 model.map { $0.toPresentModel() }
             }
-
+        
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 guard let self = self else { return }
