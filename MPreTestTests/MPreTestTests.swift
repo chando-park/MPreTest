@@ -7,30 +7,45 @@
 
 import XCTest
 @testable import MPreTest
+import Combine
 
 final class MPreTestTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var cancellables: Set<AnyCancellable>!
+    
+    override func setUp() {
+        super.setUp()
+        cancellables = []
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        cancellables = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testFetchTopHeadlinesNetworkCall() {
+        // NewsApiClient 인스턴스 생성
+        let fecher = UrlSessionFecher()
+        
+        // 네트워크 요청에 대한 기대 설정
+        let expectation = self.expectation(description: "FetchTopHeadlinesNetworkCall")
+        
+        // fetchTopHeadlines 호출 및 결과 처리
+        fecher.getList()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    XCTFail("네트워크 요청 실패: \(error)")
+                }
+            }, receiveValue: { articles in
+                XCTAssertGreaterThan(articles.count, 0, "기사는 최소한 하나 이상이어야 합니다.")
+                expectation.fulfill()
+            })
+            .store(in: &self.cancellables)
+        
+        // 네트워크 요청이 완료될 때까지 대기
+        waitForExpectations(timeout: 10, handler: nil)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

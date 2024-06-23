@@ -8,8 +8,7 @@
 import Foundation
 import CoreData
 import Combine
-
-class CoreDataManager {
+class CoreDataManager: SaveDataManagerType {
     static let shared = CoreDataManager()
 
     private init() {}
