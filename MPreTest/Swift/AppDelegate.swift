@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let listViewController = ListViewController(viewModel: viewModel)
         
         let navigationController = UINavigationController(rootViewController: listViewController)
-        //        navigationController.view.backgroundColor = .white
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .systemBlue

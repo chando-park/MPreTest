@@ -53,6 +53,5 @@ class UrlSessionFecher: ListDataFecherType{
             }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-            .eraseToAnyPublisher()
     }
 }

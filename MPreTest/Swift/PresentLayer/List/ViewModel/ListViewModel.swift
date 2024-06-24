@@ -35,7 +35,7 @@ class ListViewModel: ListViewModelType {
         fetcher.getList()
             .flatMap { [weak self] (models) -> AnyPublisher<[ListModel], Never> in
                 guard let self = self else { return Just([]).eraseToAnyPublisher() }
-                let savePublishers = models.map { CoreDataManager.shared.saveNewsItem($0) }
+                let savePublishers = models.map { self.saveDataManager.saveNewsItem($0) }
                 return Publishers.MergeMany(savePublishers)
                     .collect()
                     .map { _ in models }
