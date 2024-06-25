@@ -3,13 +3,14 @@ import Combine
 import CoreData
 
 protocol ListViewModelType {
+    var list: [ListPresentData] {get set}
     var listPublisher: AnyPublisher<[ListPresentData], Never> { get }
     var isLoading: AnyPublisher<Bool, Never> { get }
     func getData()
 }
 
 class ListViewModel: ListViewModelType {
-    @Published private(set) var list: [ListPresentData] = []
+    @Published var list: [ListPresentData] = []
     @Published private(set) var loading: Bool = false
     
     private let saveDataManager: SaveDataManagerType

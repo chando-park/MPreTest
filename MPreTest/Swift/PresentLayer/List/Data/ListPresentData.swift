@@ -24,7 +24,6 @@ extension ListModel{
         return ListPresentData(title: self.title,
                                urlToImage: self.urlToImage,
                                publishedAt: formatter.string(from: self.publishedAt),
-                               url: self.url
-                               )
+                               url: self.url)
     }
 }

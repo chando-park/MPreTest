@@ -20,10 +20,10 @@
 		DB3BCB342C284F860060FC9B /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB2E2C284F860060FC9B /* ImageFetcher.swift */; };
 		DB3BCB362C2851840060FC9B /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB352C2851840060FC9B /* ListTableViewCell.swift */; };
 		DB3BCB372C2851840060FC9B /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB352C2851840060FC9B /* ListTableViewCell.swift */; };
-		DB3BCB392C2853DD0060FC9B /* ListColrctionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB382C2853DD0060FC9B /* ListColrctionViewCell.swift */; };
-		DB3BCB3A2C2853DD0060FC9B /* ListColrctionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB382C2853DD0060FC9B /* ListColrctionViewCell.swift */; };
-		DB3BCB3C2C2853E80060FC9B /* ListColrctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB3B2C2853E80060FC9B /* ListColrctionView.swift */; };
-		DB3BCB3D2C2853E80060FC9B /* ListColrctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB3B2C2853E80060FC9B /* ListColrctionView.swift */; };
+		DB3BCB392C2853DD0060FC9B /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB382C2853DD0060FC9B /* CustomScrollViewCell.swift */; };
+		DB3BCB3A2C2853DD0060FC9B /* CustomScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB382C2853DD0060FC9B /* CustomScrollViewCell.swift */; };
+		DB3BCB3C2C2853E80060FC9B /* ListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB3B2C2853E80060FC9B /* ListScrollView.swift */; };
+		DB3BCB3D2C2853E80060FC9B /* ListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB3B2C2853E80060FC9B /* ListScrollView.swift */; };
 		DB3BCB402C2858560060FC9B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB3F2C2858560060FC9B /* WebViewController.swift */; };
 		DB3BCB412C2858560060FC9B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB3F2C2858560060FC9B /* WebViewController.swift */; };
 		DB3BCB442C285EC20060FC9B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3BCB432C285EC20060FC9B /* CoreDataManager.swift */; };
@@ -69,8 +69,8 @@
 		DB3BCB2D2C284F860060FC9B /* ImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		DB3BCB2E2C284F860060FC9B /* ImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		DB3BCB352C2851840060FC9B /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		DB3BCB382C2853DD0060FC9B /* ListColrctionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListColrctionViewCell.swift; sourceTree = "<group>"; };
-		DB3BCB3B2C2853E80060FC9B /* ListColrctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListColrctionView.swift; sourceTree = "<group>"; };
+		DB3BCB382C2853DD0060FC9B /* CustomScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollViewCell.swift; sourceTree = "<group>"; };
+		DB3BCB3B2C2853E80060FC9B /* ListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScrollView.swift; sourceTree = "<group>"; };
 		DB3BCB3F2C2858560060FC9B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DB3BCB432C285EC20060FC9B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DB3BCB462C2861600060FC9B /* SaveDataManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataManagerType.swift; sourceTree = "<group>"; };
@@ -211,8 +211,8 @@
 			children = (
 				DB5316542C27900500407C52 /* ListTableView.swift */,
 				DB3BCB352C2851840060FC9B /* ListTableViewCell.swift */,
-				DB3BCB382C2853DD0060FC9B /* ListColrctionViewCell.swift */,
-				DB3BCB3B2C2853E80060FC9B /* ListColrctionView.swift */,
+				DB3BCB382C2853DD0060FC9B /* CustomScrollViewCell.swift */,
+				DB3BCB3B2C2853E80060FC9B /* ListScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,12 +365,12 @@
 				DB3BCB2F2C284F860060FC9B /* UiImageView+ImageFetcher.swift in Sources */,
 				DB53164F2C27307800407C52 /* ListModel.swift in Sources */,
 				DB3BCB442C285EC20060FC9B /* CoreDataManager.swift in Sources */,
-				DB3BCB3C2C2853E80060FC9B /* ListColrctionView.swift in Sources */,
+				DB3BCB3C2C2853E80060FC9B /* ListScrollView.swift in Sources */,
 				DB5316522C27319B00407C52 /* UrlSessionFecher.swift in Sources */,
 				DB3BCB362C2851840060FC9B /* ListTableViewCell.swift in Sources */,
 				DB3BCB332C284F860060FC9B /* ImageFetcher.swift in Sources */,
 				DB3BCB312C284F860060FC9B /* ImageFileManager.swift in Sources */,
-				DB3BCB392C2853DD0060FC9B /* ListColrctionViewCell.swift in Sources */,
+				DB3BCB392C2853DD0060FC9B /* CustomScrollViewCell.swift in Sources */,
 				DB3BCB402C2858560060FC9B /* WebViewController.swift in Sources */,
 				DB53163F2C27292300407C52 /* ListViewModel.swift in Sources */,
 				DB5316552C27900500407C52 /* ListTableView.swift in Sources */,
@@ -385,13 +385,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB53164C2C27303600407C52 /* ListDataFecherType.swift in Sources */,
-				DB3BCB3A2C2853DD0060FC9B /* ListColrctionViewCell.swift in Sources */,
+				DB3BCB3A2C2853DD0060FC9B /* CustomScrollViewCell.swift in Sources */,
 				DB5316562C27900500407C52 /* ListTableView.swift in Sources */,
 				DB5316592C279A6900407C52 /* MockListDataFetcher.swift in Sources */,
 				DB3BCB482C2861600060FC9B /* SaveDataManagerType.swift in Sources */,
 				DB3BCB302C284F860060FC9B /* UiImageView+ImageFetcher.swift in Sources */,
 				DB5316482C2729B200407C52 /* ListPresentData.swift in Sources */,
-				DB3BCB3D2C2853E80060FC9B /* ListColrctionView.swift in Sources */,
+				DB3BCB3D2C2853E80060FC9B /* ListScrollView.swift in Sources */,
 				DB3BCB372C2851840060FC9B /* ListTableViewCell.swift in Sources */,
 				DB3BCB322C284F860060FC9B /* ImageFileManager.swift in Sources */,
 				DB5316402C27292300407C52 /* ListViewModel.swift in Sources */,

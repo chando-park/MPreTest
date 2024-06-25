@@ -33,7 +33,6 @@ class ListTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         self.register(ListTableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
-    // UITableViewDataSource 메서드
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -45,7 +44,6 @@ class ListTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    // UITableViewDelegate 메서드
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
